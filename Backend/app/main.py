@@ -1,12 +1,15 @@
 from fastapi import FastAPI,HTTPException
 from app.db import check_database_connection
 from sqlalchemy.exc import SQLAlchemyError
+from app.routers.customer import router as customer_router
 
 app = FastAPI(
     title="Loan Management System API",
     description="API for managing customers, loans, and repayments.",
     version="0.1.0",
 )
+
+app.include_router(customer_router)
 
 
 @app.get('/')
@@ -36,5 +39,7 @@ def getHealth_checkup():
             status_code= 503,
             detail="Database connection failed"
         )
+
+
 
 
