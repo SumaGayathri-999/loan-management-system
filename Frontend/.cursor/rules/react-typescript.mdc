@@ -1,0 +1,63 @@
+---
+description: React component architecture, TypeScript conventions, hooks, routing, forms, and state management
+globs: "src/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# React and TypeScript Guidelines
+
+## React
+- Use functional components and React hooks.
+- Prefer composition and reusable components over large components with multiple responsibilities.
+- Extract custom hooks when they encapsulate reusable behavior or meaningfully simplify component logic.
+- Keep business logic separate from presentation when doing so improves clarity and testability.
+- Avoid unnecessary useEffect, useMemo, useCallback, and React.memo.
+- Do not introduce abstractions solely to make code appear reusable.
+- Follow the existing project export conventions. Prefer named exports unless the project or framework requires a default export.
+
+## TypeScript
+- Define explicit types for component props, API responses, form values, and domain models.
+- Prefer type aliases or interfaces based on the structure and existing project conventions.
+- Use discriminated unions for states that have distinct valid variants.
+- Avoid any, unsafe type assertions, and non-null assertions unless justified.
+- Use unknown when handling values whose types are not known, then narrow them safely.
+- Use optional properties only when a value is genuinely optional.
+- Preserve strict TypeScript checks. Do not suppress errors to make the build pass.
+
+## Component Architecture
+- Follow the existing folder structure and feature boundaries.
+- Keep components focused on one clear responsibility.
+- Extract shared components only when there is a genuine reuse or consistency benefit.
+- Avoid prop drilling through many unrelated layers. Use an appropriate state or composition pattern when needed.
+- Keep domain-specific logic close to its feature.
+- Do not create a global store or context unless the application's requirements justify it.
+
+## State Management
+- Use local React state for component-specific interactions.
+- Use Context when state genuinely needs to be shared across a related component tree.
+- Use URL search parameters for shareable filters, pagination, and navigation state when appropriate.
+- Keep server data, form state, and transient UI state conceptually separate.
+- Do not introduce Zustand, Redux, TanStack Query, or another state library unless approved and justified.
+
+## React Router
+- Use the installed React Router version and its existing routing patterns.
+- Use route parameters and search parameters for navigation-related state.
+- Preserve existing route structure and navigation behavior.
+- Handle missing parameters and invalid routes appropriately.
+- Avoid duplicating route definitions or hardcoding navigation logic across unrelated components.
+
+## React Hook Form
+- Use React Hook Form for forms with meaningful validation or multiple fields.
+- Define form value types explicitly.
+- Use the existing validation approach and libraries already installed.
+- Display field-level validation errors clearly.
+- Prevent duplicate submissions and represent submission states.
+- Keep form defaults, validation, and submission behavior consistent.
+- Do not introduce a validation library without approval.
+
+## Naming and Formatting
+- Use PascalCase for React component names and component filenames where consistent with the project.
+- Use camelCase for variables, functions, and hooks.
+- Prefix custom hooks with use.
+- Use kebab-case for utility and non-component filenames when consistent with existing conventions.
+- Follow the repository's formatter and lint rules rather than introducing conflicting style preferences.

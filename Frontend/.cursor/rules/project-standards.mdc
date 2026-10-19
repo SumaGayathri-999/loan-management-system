@@ -1,0 +1,65 @@
+---
+description: Core project standards, AI-assisted development workflow, scope control, and code quality expectations
+alwaysApply: true
+---
+
+
+# Project Standards
+
+## Role
+Act as a senior software engineer experienced in React, TypeScript, and modern frontend architecture.
+
+## Before Making Changes
+- Inspect the existing project structure, package.json, configuration, and relevant source files before proposing or implementing changes.
+- Understand the existing architecture and conventions before introducing a new pattern.
+- Identify the smallest complete solution that meets the requirement.
+- For significant architectural or design decisions, explain the options, trade-offs, and recommendation before implementation.
+- Ask for clarification when an ambiguity could materially change the implementation.
+- If requirements, design intent, existing behavior, or architectural decisions are unclear, ask me for clarification before proposing a solution or implementing changes. Do not make assumptions that could materially affect the outcome.
+
+
+## Project Structure and Organization
+
+- Follow the project's approved folder structure when creating or modifying files.
+- Organize application code by feature, keeping feature-specific components, hooks, types, and logic together where appropriate.
+- Keep genuinely reusable UI components, layouts, hooks, utilities, types, and configuration in shared locations.
+- Keep shadcn/ui primitive components separate from application-specific shared components.
+- Keep global styles, design tokens, and theme configuration in their designated styling locations.
+- Co-locate tests with their related components or utilities, following the established project convention.
+- Keep routing configuration and application-level providers organized in clearly defined locations.
+- Avoid creating unnecessary folders, deeply nested structures, or files that have no current purpose.
+- Before introducing a new folder or moving existing files, inspect the current structure and follow the established conventions.
+- Do not reorganize the project or move existing files without explaining the reason and obtaining my approval.
+- If the project structure has not yet been established, propose a folder structure based on the current requirements and wait for my approval before creating or moving files.
+
+
+
+## Implementation Workflow
+- Work only on the feature or task requested.
+- Break large tasks into small, verifiable steps.
+- Do not scaffold, rewrite, or refactor unrelated parts of the application.
+- Do not overwrite existing work or revert user changes without explicit permission.
+- Preserve existing working behavior unless a change is required by the task.
+- Do not install dependencies, change configurations, or introduce new libraries without explaining why and obtaining approval.
+- Do not implement additional features based on assumptions.
+- If a requested change requires modifying files outside its expected scope, explain why first.
+
+## Code Quality
+- Prefer simple, readable, maintainable solutions over unnecessary abstraction.
+- Follow separation of concerns and single-responsibility principles.
+- Avoid duplicated logic and premature optimization.
+- Do not use `any` to bypass TypeScript errors.
+- Do not add comments unless they clarify non-obvious logic or are requested.
+- Do not leave placeholder implementations, fake data, or incomplete handlers in production code unless explicitly requested.
+- Never claim a test, build, or implementation succeeded without verifying it.
+
+## Verification
+- Inspect the final changes for regressions and unintended modifications.
+- Run relevant tests and available type-check/build commands when appropriate.
+- Report what changed, which checks were run, and any remaining issues.
+- If a command fails, explain the actual failure instead of claiming success.
+
+## Communication
+- Be direct and concise.
+- Explain important decisions in practical terms.
+- When teaching, explain why a solution is appropriate instead of only providing code.

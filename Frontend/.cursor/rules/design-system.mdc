@@ -1,0 +1,91 @@
+
+---
+description: Design system, design.md compliance, Tailwind CSS, shadcn/ui, responsive layouts, and accessibility
+globs: "src/**/*.{ts,tsx,css}"
+alwaysApply: false
+---
+
+# Design System Guidelines
+
+## Source of Truth
+- Read and follow @design.md before creating or significantly modifying UI.
+- Treat design.md as the source of truth for visual design, color palette, typography, spacing, layout, responsive behavior, and component patterns.
+- Inspect existing UI components and styling conventions before implementing a design.
+- Do not replace the established design system with a generic dashboard or default AI-generated styling.
+- Do not invent new colors, typography scales, shadows, border styles, or design tokens when suitable existing tokens are available.
+- If design.md does not specify a required detail, extend the existing system consistently. Ask for clarification when the choice could materially affect the overall design.
+
+## Tailwind CSS
+- Use the installed Tailwind CSS version and its existing configuration.
+- Prefer existing design tokens and reusable utility patterns.
+- Avoid unnecessary arbitrary values and repeated long class strings.
+- Extract shared styling only when it improves consistency or maintainability.
+- Do not introduce additional styling libraries without approval.
+- Avoid inline styles unless dynamic styling or a specific technical requirement justifies them.
+
+## shadcn/ui
+- Prefer existing shadcn/ui components for established interface patterns.
+- Inspect available components before creating replacements.
+- Compose existing primitives for dialogs, dropdowns, forms, tables, navigation, and other common interactions.
+- Preserve accessible behavior provided by Radix UI primitives.
+- Modify existing shadcn/ui component source only when customization is necessary.
+- Do not overwrite customized components with registry defaults.
+- Do not add new shadcn/ui components or dependencies unless required for the requested feature.
+- Use the installed Lucide React package for icons. Avoid emoji and unrelated icon libraries in application UI.
+- Use the installed Lucide React package for icons when they improve usability, recognition, or visual hierarchy.
+- Use icons selectively and minimally. Do not add icons to every label, heading, button, or section for decoration.
+- Prefer text labels when they communicate meaning more clearly than an icon alone.
+- Use consistent icon sizes and stroke styles. Follow existing design patterns.
+- For icon-only interactive controls, provide an accessible name and an appropriate tooltip when the action is not obvious.
+- Avoid emoji and unrelated icon libraries in application UI.
+
+
+## Responsive Design
+- Follow a mobile-first approach.
+- Support narrow mobile screens, tablets, laptops, and larger desktop layouts.
+- Prevent horizontal overflow and clipped content.
+- Adapt navigation, tables, forms, dialogs, and content density to smaller screens.
+- Use responsive layouts rather than shrinking desktop interfaces indiscriminately.
+- Ensure touch targets, spacing, and interactive controls are usable on mobile.
+- Do not treat a desktop-only implementation as complete when responsive behavior is part of the requirement.
+- Treat design.md as the source of truth for responsive behavior. Implement and verify every page at 360px, 390px, tablet, and desktop widths. Prevent horizontal overflow, clipped actions, and inaccessible mobile navigation. Do not consider a page complete until its mobile layout has been checked.
+
+## Accessibility
+- Use semantic HTML and accessible labels.
+- Ensure interactive elements support keyboard navigation and visible focus states.
+- Use ARIA attributes when necessary, not as a substitute for semantic HTML.
+- Provide appropriate accessible names for icon-only buttons.
+- Associate form errors with their respective fields.
+- Maintain readable contrast and respect reduced-motion preferences.
+- Preserve accessibility when customizing shadcn/ui components.
+
+## Interaction and Visual Quality
+- Implement clear loading, empty, error, disabled, and success states where applicable.
+- Use subtle transitions only when they improve usability.
+- Avoid excessive animation, decorative gradients, unnecessary cards, and visual clutter.
+- Ensure every visible interactive control has meaningful behavior.
+- Use realistic content appropriate to the feature instead of repeated placeholder text.
+- Keep the interface visually consistent across related pages.
+
+
+## Design System Source of Truth
+
+- Treat design.md as the documented source of truth for the application's visual design.
+- Implement design decisions through centralized design tokens and the existing theme configuration.
+- Before creating or changing design tokens, inspect the existing CSS variables, Tailwind configuration, and shadcn/ui theme setup.
+- Reuse existing tokens instead of introducing duplicate values for the same design purpose.
+- Use semantic tokens for colors, typography, borders, backgrounds, and other shared design properties wherever supported.
+- Do not hardcode brand colors, repeated typography values, or shared design values directly in components when an existing token can be used.
+- Do not invent or change design tokens without a requirement or approval.
+- When a design token changes, update its centralized definition and verify the affected components.
+- If design.md and the existing implementation conflict, identify the discrepancy and ask me before making consequential changes.
+
+## Styling Consistency
+
+- Use Tailwind CSS utilities and existing theme tokens for styling.
+- Follow the existing spacing scale, typography scale, breakpoints, and component variants.
+- Reuse existing shadcn/ui components and shared application components.
+- Extract reusable components or variants when doing so prevents meaningful duplication.
+- Do not create a separate styling system for individual features.
+- Avoid arbitrary values and inline styles when existing tokens or utilities can express the design.
+- Introduce new tokens only when they represent a meaningful, reusable design decision.
