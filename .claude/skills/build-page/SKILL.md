@@ -11,6 +11,11 @@ Follow these steps in order. Stop and ask at any step where requirements are unc
 - Read `Frontend/DESIGN.md` — at minimum Colors, Typography, Layout/Responsive Strategy, Components, Application shell, Do's and Don'ts.
 - Inspect `Frontend/src/` for the existing router, layout/app shell, shared components, and `src/components/ui` primitives that can be reused.
 - If the page shows backend data, read the relevant router and schema in `Backend/app/` to learn the real fields and endpoints. Do not invent fields.
+- If a design image is provided, describe what it shows (regions, components, text, data) before anything else. Then map it to the system:
+  - each element → an existing `src/components/ui` primitive (and variant), a shared component, or a new component
+  - each colour, size, radius and weight → the DESIGN.md token it corresponds to
+  - list conflicts (off-palette colours, weights above 500, more than one solid primary, fields not in the schema) with a proposed resolution.
+  The image decides structure and layout; DESIGN.md decides visual values; the schema decides fields.
 
 ## 2. Propose (before writing code)
 Give a short proposal:
@@ -18,6 +23,7 @@ Give a short proposal:
 - Components reused vs. new.
 - Layout per breakpoint: 360px, 390px, tablet (768px), desktop (1024px+).
 - Any new dependency or shadcn component needed, with justification.
+- If a design image covers only one breakpoint, propose the layout for the others. List the states it does not show (loading, empty, error).
 
 Wait for approval if the proposal adds dependencies, new folders, or moves files.
 
@@ -37,6 +43,8 @@ Wait for approval if the proposal adds dependencies, new folders, or moves files
   - [ ] 1024px+: persistent sidebar; tables only here
   - [ ] Touch targets ≥ 44px, inputs 16px text
 - If you could not visually check a breakpoint (no browser available), say so explicitly rather than claiming it passed.
+- Run the `design-review` skill on the changed files.
+- If a design image was given, screenshot each breakpoint and compare it with the image.
 
 ## 5. Report
-What changed (files), which checks ran and their results, and anything left open.
+What changed (files), which checks ran and their results, and anything left open. If a design image was given, list each intentional difference from it and why.
