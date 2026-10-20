@@ -40,7 +40,7 @@ paths:
 - Typed fetch functions per feature in `src/features/<feature>/api.ts`, using a shared client in `src/lib/` once it exists.
 - Base URL from `import.meta.env.VITE_API_URL`; never hard-code the backend URL.
 - Response and request types mirror the Pydantic schemas in `Backend/app/schemas/` (e.g. `CustomerCreate`, `CustomerResponse`). Dates arrive as ISO strings.
-- Treat parsed JSON as `unknown` at the boundary or validate it; surface errors to the UI instead of swallowing them.
+- Type responses with the TypeScript types that mirror the Pydantic schemas; FastAPI's `response_model` already validates the shape, so do not add hand-written runtime guards. Surface errors to the UI instead of swallowing them.
 
 ## React Router (v8)
 - Use the installed version and its existing patterns; keep route definitions in one place (`src/app/`).

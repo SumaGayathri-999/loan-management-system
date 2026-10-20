@@ -50,7 +50,10 @@ def get_customer(
     db: Session = Depends(get_db),
 ) -> Customer:
     # customer = db.get(Customer, customer_id)
-    customer = select(Customer).where(Customer.id == customer_id)
+    customer = db.scalars(
+        select(Customer).where(Customer.id == customer_id)
+    ).first()
+
 
     if customer is None:
         raise HTTPException(
