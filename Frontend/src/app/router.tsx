@@ -5,6 +5,8 @@ import { NAV_ITEMS, type NavId } from "@/app/nav"
 import { AppLayout } from "@/components/layout/AppLayout"
 import { NotFoundPage } from "@/components/layout/NotFoundPage"
 import { CustomersPage } from "@/features/customers/CustomersPage"
+import { NewCustomerPage } from "@/features/customers/NewCustomerPage"
+import { CUSTOMER_PATHS } from "@/features/customers/paths"
 import { DashboardPage } from "@/features/dashboard/DashboardPage"
 import { LoansPage } from "@/features/loans/LoansPage"
 import { RepaymentsPage } from "@/features/repayments/RepaymentsPage"
@@ -28,6 +30,10 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    children: [...navRoutes, { path: "*", element: <NotFoundPage /> }],
+    children: [
+      ...navRoutes,
+      { path: CUSTOMER_PATHS.new, element: <NewCustomerPage /> },
+      { path: "*", element: <NotFoundPage /> },
+    ],
   },
 ])

@@ -1,6 +1,6 @@
 # Frontend
 
-Act as a senior engineer experienced in React, TypeScript, and modern frontend architecture.
+Act as a senior engineer experienced in React, TypeScript, and modern frontend architecture and responsive design and responsive design architecture.
 
 > Keep in sync: `.cursor/rules/` holds the same standards for Cursor. When a standard here changes, update the matching Cursor rule too (and vice versa). Never delete the Cursor rules.
 
