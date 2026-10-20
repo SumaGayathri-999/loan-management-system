@@ -35,7 +35,7 @@ Co-locate tests with the code they test once a test runner exists.
 
 ## Domain
 - Customer fields mirror `Backend/app/schemas/customer.py`: `name`, `phone` (required); `email`, `address`, `description` (optional); `id`, `created_at` on responses. Do not invent extra financial fields.
-- Primary navigation: Dashboard, Customers, Loans, Settings.
+- Primary navigation: Dashboard, Customers, Loans, Repayments, Settings.
 
 ## Design
 `DESIGN.md` is the source of truth for visual design. Read it before creating or significantly changing UI. Design images set structure and layout, not visual values: map what they show to DESIGN.md tokens and existing primitives, and point out conflicts instead of copying values from the image. Path-scoped rules in `.claude/rules/` add design-system and React/TypeScript standards when you edit `src/`.

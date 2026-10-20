@@ -471,7 +471,7 @@ Depth is almost entirely tonal: cards lift by one step of colour, not by shadow.
 
 **`nav-link`**: 40px pills (`{rounded.pill}`, 0 × 20px padding) in `{typography.ui}`. Active state uses `{colors.primary}` as the indicator on `{colors.subtle}`.
 
-Primary destinations: Dashboard, Customers, Loans, Settings.
+Primary destinations: Dashboard, Customers, Loans, Repayments, Settings.
 
 ### Buttons
 
